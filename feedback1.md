@@ -32,12 +32,14 @@ Voici quelques remarques concernant le code source que j'ai parcouru accompagné
 
 * Même remarque pour les listes des contrôles d'accès (ou Access Control Lists : `$acl`) qui surchargent le constructeur de la classe `CoreController`.
 
-### Remarques en vrac :
-
-* Le fichier `style.css` censé être chargé depuis certaines vues HTML est manquant. Par ailleurs, il est préférable de stocker les fichiers CSS, JavaScript ainsi que les médias dans un répertoire `assets` situé à la racine du dossier `public` afin d'y avoir accès depuis nos vues à l'aide de la variable super globale `$_SERVER['BASE_URI']` qui nous permet de retrouver l'URL pointant vers la racine du projet.
+### Bonnes pratiques :
 
 Étant donné que la classe `CoreController` n'a pas vocation à être instanciée et sert uniquement de moule à ses classes filles contrôleurs, il est pertinent de la définir  comme étant une **classe abstraite**.
 
 Par convention, il est préférable de nommer les routes en `skewer-case` et non en `snake_case` ou `camelCase`. Dans votre solution, c'est uniquement le cas pour la route `main-home`.
 
 Enfin, le fichier de configuration du serveur stockant les identifiants de connexion à votre base de données, `app/config.ini`, ne doit pas être partagé sur GitHub. Il doit donc être ajouté au fichier `.gitignore` afin que ses modifications et sa publication soient ignoré.
+
+### Remarques en vrac :
+
+* Le fichier `style.css` censé être chargé depuis certaines vues HTML est manquant. Par ailleurs, il est préférable de stocker les fichiers CSS, JavaScript ainsi que les médias dans un répertoire `assets` situé à la racine du dossier `public` afin d'y avoir accès depuis nos vues à l'aide de la variable super globale `$_SERVER['BASE_URI']` qui nous permet de retrouver l'URL pointant vers la racine du projet.
