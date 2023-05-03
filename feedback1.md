@@ -22,13 +22,7 @@ Conservez à l'esprit le cheminement suivi pour retrouver le problème de routag
 
 ## Remarques et bonnes pratiques :
 
-Voici quelques remarques concernat le code source que j'ai parcouru accompagné de proposition de bonnes pratiques que je invite fortement à appliquer à l'avenir !
-
-### Le chargement de fichiers : 
-
-* Dans le fichier `public/index.php`, plusieurs `use` apparaissent en haut du fichier pour importer autant de contrôleur. Grâce à l'import de l'autoload, qui permet de charger automatiquement toutes les classes non reconnue, situé en dessous, cet import multiple est inutile.
-
-* Le fichier `style.css` censé être chargé depuis certaines vues HTML est manquant. Par ailleurs, il est préférable de stocker les fichiers CSS, JavaScript ainsi que les médias dans un répertoire `assets` situé à la racine du dossier `public` afin d'y avoir accès depuis nos vues à l'aide de la variable super globale `$_SERVER['BASE_URI']` qui nous permet de retrouver l'URL pointant vers la racine du projet.
+Voici quelques remarques concernant le code source que j'ai parcouru accompagné de proposition de bonnes pratiques que je invite fortement à appliquer à l'avenir !
 
 ### Décharger les fichiers :
 
@@ -39,6 +33,8 @@ Voici quelques remarques concernat le code source que j'ai parcouru accompagné 
 * Même remarque pour les listes des contrôles d'accès (ou Access Control Lists : `$acl`) qui surchargent le constructeur de la classe `CoreController`.
 
 ### Remarques en vrac :
+
+* Le fichier `style.css` censé être chargé depuis certaines vues HTML est manquant. Par ailleurs, il est préférable de stocker les fichiers CSS, JavaScript ainsi que les médias dans un répertoire `assets` situé à la racine du dossier `public` afin d'y avoir accès depuis nos vues à l'aide de la variable super globale `$_SERVER['BASE_URI']` qui nous permet de retrouver l'URL pointant vers la racine du projet.
 
 Étant donné que la classe `CoreController` n'a pas vocation à être instanciée et sert uniquement de moule à ses classes fille contrôleurs, il est pertinent de la définir  comme étant une **classe abstraite**.
 
