@@ -36,7 +36,7 @@ Voici quelques remarques concernant le code source que j'ai parcouru accompagné
 
 * Le fichier `style.css` censé être chargé depuis certaines vues HTML est manquant. Par ailleurs, il est préférable de stocker les fichiers CSS, JavaScript ainsi que les médias dans un répertoire `assets` situé à la racine du dossier `public` afin d'y avoir accès depuis nos vues à l'aide de la variable super globale `$_SERVER['BASE_URI']` qui nous permet de retrouver l'URL pointant vers la racine du projet.
 
-Étant donné que la classe `CoreController` n'a pas vocation à être instanciée et sert uniquement de moule à ses classes fille contrôleurs, il est pertinent de la définir  comme étant une **classe abstraite**.
+Étant donné que la classe `CoreController` n'a pas vocation à être instanciée et sert uniquement de moule à ses classes filles contrôleurs, il est pertinent de la définir  comme étant une **classe abstraite**.
 
 Par convention, il est préférable de nommer les routes en `skewer-case` et non en `snake_case` ou `camelCase`. Dans votre solution, c'est uniquement le cas pour la route `main-home`.
 

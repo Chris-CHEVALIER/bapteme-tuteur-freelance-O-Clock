@@ -35,9 +35,9 @@ De base, on perd une partie du texte affiché lorsque le menu déroulant permett
 Une fois le menu déroulant déployé, le défilement horizontal du site est possible :
 ![utilisation de la classe container](./screenshots/feedback2-2.png)
 
-Placer une classe Bootstrap [`container`](https://getbootstrap.com/docs/5.0/layout/containers/#default-container) englobant le contenu de chaque page dans le fichier `layout/header.tpl.php` aurait réglé le problème.
+Placer une classe Bootstrap [`container`](https://getbootstrap.com/docs/5.0/layout/containers/#default-container) englobant le contenu de chaque page dans le fichier `layout/header.tpl.php` aurait réglé le problème. Pour rappel, la classe Bootstrap `container` ajoute des marges horizontales équivalentes autour de l'élément HTML qui l'utilise.
 
-Une mention `Deprecated` apparaîyt sur la page affichant la liste des étudiants. Ce problème est dû au fait que la propriété `$teacher_id` est manquante dans le modèle `Student`.
+Une mention `Deprecated` apparaît sur la page affichant la liste des étudiants. Ce problème est dû au fait que la propriété `$teacher_id` est manquante dans le modèle `Student`.
 
 ## Bonnes pratiques :
 
